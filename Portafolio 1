@@ -1,0 +1,14 @@
+# Nombre: Jesús Castañeda
+# Materia: Metabolómica
+# Grupo:2
+# Numero de tarea: Portafolio 1
+
+pelicula <- c("Anora","The Brutalist","Flow","Emilia Pérez","Wicked","Dune: Part Two","I'm Still Here")
+
+mes <- c("Enero","Diciembre","Diciembre","Mayo","Noviembre","Marzo","Febrero")
+
+recaudacion <- c(41000000,41400000,728000000,714000000,200000000,299000000,300000000)
+
+tabla <- data.frame(pelicula, mes, recaudacion)
+
+View(tabla)
