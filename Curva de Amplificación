@@ -1,0 +1,34 @@
+#Nombre: Jesus Castañeda 
+#Ejercicio curvas de amplificación
+
+install.packages("pacman")
+#pacman llama a otros paquetes, y si no están los instala
+
+library("pacman")
+
+p_load("vroom", #llamar bases de datos
+       "dplyr", #facilita el manejo de datos
+       "ggplot2") #grafica
+
+Garu <- vroom(file = "https://raw.githubusercontent.com/ManuelLaraMVZ/resultados_PCR_practica/refs/heads/main/Amplif_grupo1_17022025.csv")
+
+head(Garu)
+
+Datos <- Garu %>% #significa que a la base de datos anterior haremos lo siguiente
+  select(Cycle, "F1")
+
+Datos
+
+Grafica <- ggplot(Datos,
+                  mapping = aes(x = Cycle,
+                                y = F1))+
+  geom_line(color="#7384F5")+
+  labs(x="Ciclos",
+       y="Fluorescencia",
+       title="Gráfica de amplificación RT-qPCR",
+       subtitle = "Muestra F1",
+       caption = "Diseño: Jesus Castañeda")+
+  geom_point(color="#CCCFE3")+
+  theme_classic()
+         
+Grafica 
